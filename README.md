@@ -1,6 +1,6 @@
 # gamestory
 
-> Gamestory is a web project that is designed to allow users to create, organize, manage, and play [storytelling games][storytelling-games-wikipedie].
+> Gamestory is a web project that is designed to allow users to create, organize, manage, and play [storytelling games][storytelling-games-wikipedia].
 
 ## Build Setup
 
@@ -27,4 +27,4 @@ npm test
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
 
-[storytelling-games-wikipedia]: https://en.wikipedia.org/wiki/Storytelling_game
+:x
