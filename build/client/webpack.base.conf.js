@@ -1,7 +1,8 @@
 var path = require('path')
-var config = require('../config')
+var config = require('../../config')
 var utils = require('./utils')
-var projectRoot = path.resolve(__dirname, '../')
+var projectRoot = path.resolve(__dirname, '../../')
+var poststylus = require('poststylus');
 
 var env = process.env.NODE_ENV
 // check env & config/index.js to decide weither to enable CSS Sourcemaps for the
@@ -24,7 +25,7 @@ module.exports = {
     fallback: [path.join(__dirname, '../node_modules')],
     alias: {
       'vue$': 'vue/dist/vue.common.js',
-      'src': path.resolve(__dirname, '../src/client'),
+      'src/client': path.resolve(__dirname, '../src/client'),
       'assets': path.resolve(__dirname, '../src/client/assets'),
       'components': path.resolve(__dirname, '../src/client/components')
     }
@@ -48,6 +49,10 @@ module.exports = {
       }
     ],
     loaders: [
+      {
+        test: /\.styl$/,
+        loader: 'style-loader!css-loader!stylus-loader'
+      },
       {
         test: /\.vue$/,
         loader: 'vue'
@@ -89,6 +94,11 @@ module.exports = {
       require('autoprefixer')({
         browsers: ['last 2 versions']
       })
+    ]
+  },
+  stylus: {
+    use: [
+      poststylus([ 'autoprefixer' ])
     ]
   }
 }

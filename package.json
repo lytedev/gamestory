@@ -8,26 +8,27 @@
     "dev-client": "node build/client/dev-server.js",
     "build-client": "node build/client/build.js",
     "lint-client": "eslint --ext .js,.vue src/client",
-
     "dev-backend": "nodemon -w src/server --exec \"npm run lint-backend && babel-node src/server --presets es2015,stage-2\"",
     "build-backend": "node build/server/build.js",
     "lint-backend": "eslint --ext .js,.vue src/server test/unit/specs test/e2e/specs",
-
     "unit-backend": "karma start test/unit/server/karma.conf.js --single-run",
     "e2e-backend": "node test/e2e/server/runner.js",
     "test-backend": "npm run unit-backend && npm run e2e-backend",
-
     "unit-client": "karma start test/unit/client/karma.conf.js --single-run",
     "e2e-client": "node test/e2e/client/runner.js",
     "test-client": "npm run unit-client && npm run e2e-client",
-
     "lint-tests": "eslint --ext .js test/unit test/e2e",
-
     "lint-all": "eslint --ext .js,.vue src/client src/server test/unit test/e2e"
   },
   "dependencies": {
     "babel-cli": "^6.18.0",
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "postcss": "^5.2.6",
+    "poststylus": "^0.2.3",
+    "pug": "^2.0.0-beta6",
+    "pug-loader": "^2.3.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^2.4.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",
