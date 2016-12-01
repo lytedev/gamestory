@@ -5,13 +5,25 @@
   "author": "Daniel Flanagan <daniel@lytedev.io>",
   "private": true,
   "scripts": {
-    "dev": "node build/dev-server.js",
-    "dev-backend": "nodemon -w src/server --exec \"babel-node src/server --presets es2015,stage-2\"",
-    "build": "node build/build.js",
-    "unit": "karma start test/unit/karma.conf.js --single-run",
-    "e2e": "node test/e2e/runner.js",
-    "test": "npm run unit && npm run e2e",
-    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
+    "dev-client": "node build/client/dev-server.js",
+    "build-client": "node build/client/build.js",
+    "lint-client": "eslint --ext .js,.vue src/client",
+
+    "dev-backend": "nodemon -w src/server --exec \"npm run lint-backend && babel-node src/server --presets es2015,stage-2\"",
+    "build-backend": "node build/server/build.js",
+    "lint-backend": "eslint --ext .js,.vue src/server test/unit/specs test/e2e/specs",
+
+    "unit-backend": "karma start test/unit/server/karma.conf.js --single-run",
+    "e2e-backend": "node test/e2e/server/runner.js",
+    "test-backend": "npm run unit-backend && npm run e2e-backend",
+
+    "unit-client": "karma start test/unit/client/karma.conf.js --single-run",
+    "e2e-client": "node test/e2e/client/runner.js",
+    "test-client": "npm run unit-client && npm run e2e-client",
+
+    "lint-tests": "eslint --ext .js test/unit test/e2e",
+
+    "lint-all": "eslint --ext .js,.vue src/client src/server test/unit test/e2e"
   },
   "dependencies": {
     "babel-cli": "^6.18.0",

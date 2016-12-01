@@ -1,6 +1,6 @@
 import Express from 'express'
 
-const app = Express(  )
+const app = Express()
 
-// console.log(app)
+console.log(app)
 

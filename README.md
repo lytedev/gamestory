@@ -8,11 +8,17 @@
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
-npm run dev
+# start the backend server and auto restart if server files are modified
+npm run dev-server
 
-# build for production with minification
-npm run build
+# compile the backend server for production deployment
+npm run build-server
+
+# serve frontend files with hot reload at localhost:8080
+npm run dev-client
+
+# build frontend files for production with minification
+npm run build-client
 
 # run unit tests
 npm run unit
