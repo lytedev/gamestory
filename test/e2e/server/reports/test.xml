@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="1"
+            failures="0"
+            tests="1">
+
+  <testsuite name="test"
+    errors="1" failures="0" hostname="" id="" package="test" skipped="0"
+    tests="1" time="0.01100" timestamp="Thu, 01 Dec 2016 02:55:31 GMT">
+  
+    <testcase name="default e2e tests" time="0.01100" assertions="0">
+    </testcase>
+      <system-err>
+          Error while running [Test / default e2e tests]:
+
+  TypeError: browser.url(...).done is not a function
+    at Object.defaultE2eTests [as default e2e tests] (/home/daniel/code/open-source/gamestory/test/e2e/server/specs/test.js:13:8)
+    at Module.call (/home/daniel/code/open-source/gamestory/node_modules/nightwatch/lib/runner/module.js:62:34)
+    at /home/daniel/code/open-source/gamestory/node_modules/nightwatch/lib/runner/testcase.js:70:29
+    at _fulfilled (/home/daniel/code/open-source/gamestory/node_modules/q/q.js:834:54)
+    at self.promiseDispatch.done (/home/daniel/code/open-source/gamestory/node_modules/q/q.js:863:30)
+    at Promise.promise.promiseDispatch (/home/daniel/code/open-source/gamestory/node_modules/q/q.js:796:13)
+    at /home/daniel/code/open-source/gamestory/node_modules/q/q.js:556:49
+    at runSingle (/home/daniel/code/open-source/gamestory/node_modules/q/q.js:137:13)
+    at flush (/home/daniel/code/open-source/gamestory/node_modules/q/q.js:125:13)
+    at _combinedTickCallback (internal/process/next_tick.js:67:7)
+      </system-err>
+  
+  
+  </testsuite>
+</testsuites>

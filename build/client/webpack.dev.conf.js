@@ -12,13 +12,13 @@ Object.keys(baseWebpackConfig.entry).forEach(function (name) {
 
 module.exports = merge(baseWebpackConfig, {
   module: {
-    loaders: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap })
+    loaders: utils.styleLoaders({ sourceMap: config.client.dev.cssSourceMap })
   },
   // eval-source-map is faster for development
   devtool: '#eval-source-map',
   plugins: [
     new webpack.DefinePlugin({
-      'process.env': config.dev.env
+      'process.env': config.client.dev.env
     }),
     // https://github.com/glenjamin/webpack-hot-middleware#installation--usage
     new webpack.optimize.OccurenceOrderPlugin(),

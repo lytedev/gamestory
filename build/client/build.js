@@ -18,7 +18,7 @@ console.log(
 var spinner = ora('building for production...')
 spinner.start()
 
-var assetsPath = path.join(config.build.assetsRoot, config.build.assetsSubDirectory)
+var assetsPath = path.join(config.client.build.assetsRoot, config.client.build.assetsSubDirectory)
 rm('-rf', assetsPath)
 mkdir('-p', assetsPath)
 cp('-R', 'static/*', assetsPath)

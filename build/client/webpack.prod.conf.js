@@ -12,17 +12,17 @@ var env = process.env.NODE_ENV === 'testing'
 
 var webpackConfig = merge(baseWebpackConfig, {
   module: {
-    loaders: utils.styleLoaders({ sourceMap: config.build.productionSourceMap, extract: true })
+    loaders: utils.styleLoaders({ sourceMap: config.client.build.productionSourceMap, extract: true })
   },
-  devtool: config.build.productionSourceMap ? '#source-map' : false,
+  devtool: config.client.build.productionSourceMap ? '#source-map' : false,
   output: {
-    path: config.build.assetsRoot,
+    path: config.client.build.assetsRoot,
     filename: utils.assetsPath('js/[name].[chunkhash].js'),
     chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
   },
   vue: {
     loaders: utils.cssLoaders({
-      sourceMap: config.build.productionSourceMap,
+      sourceMap: config.client.build.productionSourceMap,
       extract: true
     })
   },
@@ -45,7 +45,7 @@ var webpackConfig = merge(baseWebpackConfig, {
     new HtmlWebpackPlugin({
       filename: process.env.NODE_ENV === 'testing'
         ? 'index.html'
-        : config.build.index,
+        : config.client.build.index,
       template: 'index.html',
       inject: true,
       minify: {
@@ -81,16 +81,16 @@ var webpackConfig = merge(baseWebpackConfig, {
   ]
 })
 
-if (config.build.productionGzip) {
+if (config.client.build.productionGzip) {
   var CompressionWebpackPlugin = require('compression-webpack-plugin')
 
-  webpackConfig.plugins.push(
+  webpackConfig.client.plugins.push(
     new CompressionWebpackPlugin({
       asset: '[path].gz[query]',
       algorithm: 'gzip',
       test: new RegExp(
         '\\.(' +
-        config.build.productionGzipExtensions.join('|') +
+        config.client.build.productionGzipExtensions.join('|') +
         ')$'
       ),
       threshold: 10240,

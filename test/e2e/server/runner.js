@@ -1,6 +1,6 @@
 // 1. start the dev server using production config
 process.env.NODE_ENV = 'testing'
-var server = require('../../../src/server/index.js')
+import server from '../../../src/server/index.js'
 
 // 2. run the nightwatch test suite against it
 // to run in additional browsers:
@@ -11,7 +11,7 @@ var server = require('../../../src/server/index.js')
 // http://nightwatchjs.org/guide#settings-file
 var opts = process.argv.slice(2)
 if (opts.indexOf('--config') === -1) {
-  opts = opts.concat(['--config', 'test/e2e/client/nightwatch.conf.js'])
+  opts = opts.concat(['--config', 'test/e2e/server/nightwatch.conf.js'])
 }
 if (opts.indexOf('--env') === -1) {
   opts = opts.concat(['--env', 'chrome'])

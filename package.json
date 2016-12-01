@@ -15,8 +15,9 @@
     "e2e-client": "node test/e2e/client/runner.js",
     "test-client": "npm run unit-client && npm run e2e-client",
     "unit-backend": "karma start test/unit/server/karma.conf.js --single-run",
-    "e2e-backend": "node test/e2e/server/runner.js",
+    "e2e-backend": "babel-node test/e2e/server/runner.js",
     "test-backend": "npm run unit-backend && npm run e2e-backend",
+    "test-all": "npm run test-backend && npm run test-client",
     "lint-tests": "eslint --ext .js test/unit test/e2e",
     "lint-all": "eslint --ext .js,.vue src/client src/server test/unit test/e2e"
   },
